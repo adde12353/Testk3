@@ -54,6 +54,7 @@ export default function CreateTask() {
         />
         <textarea
           required
+          placeholder="Task Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           rows="5"

@@ -48,11 +48,11 @@ export default function AllTasks() {
             {data && data.map((task) => 
                 (
                     <div className="cardTask" key={task.id}>
-                        <p>{task.titel}</p>
+                        <p id="title">{task.titel}</p>
                         {timeDataTask && timeDataTask.map((time) => 
                    { if(time.taskId == task.id){
                    return <div key={time.id}>
-                    <p>Sekunder:{time.totalTime / 1000}</p>
+                    <p id="time">Sekunder:{time.totalTime / 1000}</p>
                 </div>}}
             ) }
                     </div>

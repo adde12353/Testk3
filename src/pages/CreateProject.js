@@ -1,24 +1,48 @@
-import React from 'react';
-import { render, fireEvent, waitFor } from '@testing-library/react';
-import CreateTask from './CreateTask';
+import React from 'react'
+import { useState } from 'react'
 
-describe('CreateTask Component', () => {
-  test('submits the form and displays the success message', async () => {
-    // Render the CreateTask component
-    const { getByText, getByPlaceholderText } = render(<CreateTask />);
+export default function CreateTask() {
+    const [titel, setTitel] = useState('')
+    const [sendDone, setSendDone] = useState(false)
+    
+    function handleSubmit(e) {
+        setSendDone()
+        e.preventDefault();
+        const input = {
+        name: titel,
+        }
+        fetch("http://localhost:3000/projects", {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(input)
+        }).then(
+            setSendDone("Du skickade datan utan problem")
+            ).catch(err => {
+            console.log(err)
+            if(err) {
+                setSendDone("Det gick inte att spara, försök igen")
+            }
+        })
 
-    // Get the input element and type a value
-    const inputElement = getByPlaceholderText('Projekt namn');
-    fireEvent.change(inputElement, { target: { value: 'My Task' } });
+    }
 
-    // Submit the form
-    const submitButton = getByText('Spara');
-    fireEvent.click(submitButton);
+  return (
+    <div>
+        <form onSubmit={handleSubmit} className='createForm'>
+            <h3>Skapa ett projekt</h3>
+            <input 
+            type="text"
+            required
+            value={titel}
+            onChange={(e) => setTitel(e.target.value)}
+            placeholder='Projekt namn'/>
+            
+            <button>Spara</button>
+            <p>{sendDone}
+            </p>
+        </form>
+        
+    </div>
+  )
 
-    // Verify the success message is displayed
-    await waitFor(() => {
-      const successMessage = getByText('Du skickade datan utan problem');
-      expect(successMessage).toBeInTheDocument();
-    });
-  });
-});
+  }

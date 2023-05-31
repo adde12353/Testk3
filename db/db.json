@@ -1,92 +1,14 @@
 {
   "projects": [
     {
-      "name": "test1",
-      "id": 3
+      "name": "Test",
+      "id": 1
     },
     {
-      "name": "Test1",
-      "id": 4
-    },
-    {
-      "name": "hej1",
-      "id": 5
-    },
-    {
-      "name": "hejsan",
-      "id": 6
-    },
-    {
-      "name": "hej123",
-      "id": 7
-    },
-    {
-      "name": "awdwadw",
-      "id": 8
+      "name": "TestProjekt2",
+      "id": 2
     }
   ],
-  "tasks": [
-    {
-      "projectId": 3,
-      "titel": "hejsna",
-      "description": "nddnjd",
-      "id": 2
-    },
-    {
-      "projectId": 3,
-      "titel": "hej123",
-      "description": "hej2334",
-      "id": 3
-    },
-    {
-      "projectId": 3,
-      "titel": "awawd",
-      "description": "awdwad",
-      "id": 5
-    }
-  ],
-  "timelogs": [
-    {
-      "taskId": 2,
-      "start": "2023-05-17T04:50:02.217Z",
-      "end": "2023-05-17T04:50:29.187Z",
-      "id": 2
-    },
-    {
-      "taskId": 3,
-      "start": "2023-05-17T04:50:02.841Z",
-      "end": "2023-05-17T04:50:31.895Z",
-      "id": 3
-    },
-    {
-      "taskId": 2,
-      "start": "2023-05-17T04:50:23.654Z",
-      "end": "2023-05-17T04:50:37.061Z",
-      "id": 6
-    },
-    {
-      "taskId": 3,
-      "start": "2023-05-17T04:50:24.467Z",
-      "end": "2023-05-17T04:50:52.199Z",
-      "id": 7
-    },
-    {
-      "taskId": 2,
-      "start": "2023-05-17T04:50:36.263Z",
-      "end": "2023-05-17T04:50:59.746Z",
-      "id": 10
-    },
-    {
-      "taskId": 2,
-      "start": "2023-05-17T04:50:53.329Z",
-      "end": "2023-05-17T05:01:33.666Z",
-      "id": 12
-    },
-    {
-      "taskId": 3,
-      "start": "2023-05-17T04:50:55.776Z",
-      "end": "",
-      "id": 13
-    }
-  ]
+  "tasks": [],
+  "timelogs": []
 }

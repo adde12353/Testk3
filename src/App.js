@@ -1,8 +1,7 @@
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import {createContext, useState, useEffect} from "react"
 import Home from './pages/Home'
@@ -12,7 +11,7 @@ import LoggDates from './pages/LoggDates'
 import './App.css'
 import Footer from "./component/Footer";
 import AllTasks from "./pages/AllTasks";
-/* import AllProjects from "./pages/AllProjects"; */
+import AllProjects from "./pages/AllProjects";
 import TimeTracker from './pages/timeTracker'
 import Create from './pages/Create'
 
@@ -40,8 +39,8 @@ function App() {
     <Routes>
       <Route path="/" element={<Home/>}>
       <Route path="/alltasks" element={<AllTasks/>} />
-{/*       <Route path="/allprojects" element={<AllProjects/>} />
- */}      </Route>
+   <Route path="/allprojects" element={<AllProjects/>} />
+       </Route>
       <Route path="/create" element={<Create/>}>
       <Route path="/create/createtask" element={<CreateTask/>} />
       <Route path="/create/createproject" element={<CreateProject/>} />

@@ -12,7 +12,6 @@ export default function AllTasks() {
 
 
     useEffect(() => {
-        console.log("effektRUn")
         fetch("http://localhost:3000/tasks")
         .then((results) => results.json())
         .then((data) => setData(data))
