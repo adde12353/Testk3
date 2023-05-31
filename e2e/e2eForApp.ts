@@ -1,0 +1,36 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('http://localhost:3000/');
+  await page.goto('http://192.168.1.115:3000/');
+await page.getByRole('link', { name: 'home' }).click();
+await page.getByRole('link', { name: 'Alla Tasks' }).click();
+await page.getByRole('link', { name: 'Alla projekt' }).click();
+await page.getByRole('link', { name: 'timer' }).click();
+await page.getByRole('link', { name: 'add_circle' }).click();
+await page.getByRole('link', { name: 'Skapa projekt' }).click();
+await page.getByRole('link', { name: 'Skapa task' }).click();
+await page.getByRole('link', { name: 'list' }).click();
+await page.getByRole('link', { name: 'add_circle' }).click();
+await page.getByRole('link', { name: 'timer' }).click();
+await page.getByRole('button', { name: 'Play' }).first().click();
+await page.getByRole('button', { name: 'Play' }).nth(1).click();
+await page.getByRole('link', { name: 'list' }).click();
+await page.getByRole('link', { name: 'add_circle' }).click();
+await page.getByRole('link', { name: 'Skapa task' }).click();
+await page.getByRole('heading', { name: 'Skapa ett task' }).click();
+await page.getByRole('combobox').selectOption('1');
+await page.getByPlaceholder('Task Titel').click();
+await page.getByPlaceholder('Task Titel').click();
+await page.getByPlaceholder('Task Titel').fill('test');
+await page.getByPlaceholder('Task Description').click();
+await page.getByPlaceholder('Task Description').fill('test');
+await page.getByRole('button', { name: 'Spara' }).click();
+await page.getByRole('link', { name: 'Skapa projekt' }).click();
+await page.getByPlaceholder('Projekt namn').click();
+await page.getByPlaceholder('Projekt namn').fill('uighugui');
+await page.getByRole('button', { name: 'Spara' }).click();
+await page.getByRole('link', { name: 'home' }).click();
+await page.getByRole('link', { name: 'Alla Tasks' }).click();
+await page.getByRole('link', { name: 'Alla projekt' }).click();
+});
